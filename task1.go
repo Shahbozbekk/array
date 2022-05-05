@@ -21,19 +21,25 @@
 // Sample Output:
 // 99 137 151 187 117 71 20 187 93 67 type ok
 
-// var workArray [10]uint8
-// var index [6]uint8
-// for i := 0; i < 10; i++ {
-// 	fmt.Scan(&workArray[i])
-// }
-// for i := 0; i < 6; i++ {
-// 	fmt.Scan(&index[i])
-// }
+package main
 
-// for i := 0; i < 6; {
-// 	workArray[index[i]], workArray[index[i+1]] = workArray[index[i+1]], workArray[index[i]]
-// 	i += 2
-// }
-// for i := 0; i < 10; i++ {
-// 	fmt.Print(workArray[i], " ")
-// }
+import "fmt"
+
+func main() {
+	var workArray [10]uint8
+	var index [6]uint8
+	for i := 0; i < 10; i++ {
+		fmt.Scan(&workArray[i])
+	}
+	for i := 0; i < 6; i++ {
+		fmt.Scan(&index[i])
+	}
+
+	for i := 0; i < 6; {
+		workArray[index[i]], workArray[index[i+1]] = workArray[index[i+1]], workArray[index[i]]
+		i += 2
+	}
+	for i := 0; i < 10; i++ {
+		fmt.Print(workArray[i], " ")
+	}
+}
